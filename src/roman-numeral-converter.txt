@@ -1,0 +1,34 @@
+function convertToRoman(num) {
+ let input = [
+    [ 1000, 'M' ],
+    [ 900, 'CM' ],
+    [ 500, 'D' ],
+    [ 400, 'CD' ],
+    [ 100, 'C' ],
+    [ 90, 'XC' ],
+    [ 50, 'L' ],
+    [ 40, 'XL' ],
+    [ 10, 'X' ],
+    [ 9, 'IX' ],
+    [ 5, 'V' ],
+    [ 4, 'IV' ],
+    [ 1, 'I' ]
+  ];
+  
+  let response = '';
+
+  function getAns(n) {
+    var i=0;
+  while(i < input.length) {
+    if ( n >= input[i][0] ) {
+      response = response + input[i][1].repeat(Math.floor(n / input[i][0]));
+      getAns(n % input[i][0]);
+      break;
+    }
+    i++;
+  }};
+  getAns(num);
+  return response;
+}
+
+convertToRoman(36);

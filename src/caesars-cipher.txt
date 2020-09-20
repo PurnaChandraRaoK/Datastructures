@@ -1,0 +1,16 @@
+function rot13(str) { // LBH QVQ VG!
+  
+  const atoz = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  const ceaserCipher = 'NOPQRSTUVWXYZABCDEFGHIJKLM'
+  let res = ''
+
+  for (const letter of str) {
+    if(atoz.charAt(ceaserCipher.indexOf(letter)) != '' ) 
+    res += atoz.charAt(ceaserCipher.indexOf(letter))
+    else
+     res += letter
+  }
+  return res
+}
+
+rot13("SERR PBQR PNZC");
